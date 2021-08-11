@@ -1,5 +1,11 @@
-#!/bin/bash 
-
 vol="$(pamixer --get-volume)"
-echo "${vol}%"
+mute="$(pamixer --get-mute)"
+
+if  [ $mute == "true" ];
+     then 
+	echo  "${vol}% M"
+     else
+ 	echo "${vol}%"
+fi 
+
 
